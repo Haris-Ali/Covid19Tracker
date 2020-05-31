@@ -39,7 +39,8 @@ function TabScreens() {
             initialRouteName="Asia"
             shifting={false}
             barStyle={{ 
-                backgroundColor: '#446cd4' 
+                backgroundColor: '#446cd4',
+                paddingBottom: 5 
             }}
         >
             <Tab.Screen 

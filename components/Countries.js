@@ -38,8 +38,9 @@ export default class Countries extends Component {
   }
 
   updateSearch = searchText => {
+    const tempSearch = searchText.toLowerCase()
     this.setState({searchText}, () => {
-      if ('' === searchText) {
+      if ('' === tempSearch) {
         this.setState({
           dataSource: this.state.tempDataSource
         })
@@ -47,7 +48,7 @@ export default class Countries extends Component {
       }
       this.state.dataSource = this.state.tempDataSource
         .filter(function(item) {
-          return item.Country.includes(searchText);
+          return item.Country.toLowerCase().startsWith(tempSearch);
         }).map(function({Country, Slug, ISO2}) {
           return {Country, Slug, ISO2}
         })
